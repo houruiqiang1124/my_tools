@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Foo() {};
+        const obj = new Foo();
+        
+        // 在 Object 的原型上定义一个属性：objProp
+        Object.prototype.objProp = '我是 Object 原型上的属性';
+
+        // 在 Function 的原型上定义一个属性：funcProp
+        Function.prototype.funcProp = '我是 Function 原型上的属性';
+
+        console.log(obj.objProp);
+        console.log(obj.funcProp);
+
+        console.log('----------')
+        console.log(Foo.objProp);
+        console.log(Foo.objProp);
+
+        console.log('----------');
+        console.log(Object.objProp);
+        console.log(Object.funcProp);
+
+        console.log('----------');
+        console.log(Function.objProp) // ?
+        console.log(Function.funcProp) // ?
+
+        console.log('----------');
+        console.log(Array.objProp) // ?
+        console.log(Array.funcProp) // ?
+    </script>
+</body>
+</html>
