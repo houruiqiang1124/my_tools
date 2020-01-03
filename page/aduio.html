@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio id="music1" controls="controls" autoplay="autoplay" preload id="music1" hidden>
+        <source src="./audio/111.mp3" />
+    </audio>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+
+    function musicInWeixinHandler() {
+        console.log(11)
+        musicPlay(true);
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            musicPlay(true);
+        }, false);
+        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+    }
+
+    function musicPlay(isPlay) {
+        var media = document.querySelector('#music1');
+        if (isPlay && media.paused) {
+            media.play();
+        }
+        if (!isPlay && !media.paused) {
+            media.pause();
+        }
+    }
+</script>
+
+</html>
