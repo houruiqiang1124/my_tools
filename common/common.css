@@ -1,5 +1,10 @@
 /* ================================ */
 /*多分辨率设定rem设定*/
+/* 
+    vscode 下载插件 cssrem
+    设置Fixed Digits 保留两位
+    设置Root Font Size  常用iPhone6分辨率为375，蓝湖为750 根字体设为46
+*/
 html {
     font-size: 20px;
 }
@@ -111,6 +116,15 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     text-overflow: ellipsis
 }
+
+.ellipsis2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 
 .clearfix {
     zoom: 1
